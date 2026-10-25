@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Haosen Zhang</title>
+  <meta name="description" content="Haosen Zhang — M.S. Computer Science at Emory University. Software engineering, LLM agents, and VR/HCI.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="brand">Haosen Zhang</a>
+      <div class="nav-links">
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="wrap hero">
+      <img class="headshot" src="assets/headshot.jpg" alt="Haosen Zhang" width="160" height="160">
+      <div>
+        <h1>Haosen Zhang</h1>
+        <p class="tagline">Software Engineer · LLM Agents · VR &amp; HCI Research</p>
+        <p class="lead">
+          M.S. in Computer Science at Emory University (Dec. 2027). I build backend and LLM systems that are
+          bounded, testable, and reliable — and real-time VR experiences grounded in user studies.
+          My background in econometrics shapes how I evaluate systems: measure honestly, report limitations.
+        </p>
+        <div class="schools">
+          <img src="assets/emory.png" alt="Emory University" height="28">
+          <img src="assets/illinois.png" alt="University of Illinois Urbana-Champaign" height="32">
+        </div>
+        <div class="cta">
+          <a class="btn" href="mailto:hzha853@emory.edu">Email me</a>
+          <a class="btn ghost" href="https://github.com/HaosenZhang0426" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </header>
+
+    <section id="experience" class="wrap">
+      <h2>Experience</h2>
+
+      <article class="item">
+        <div class="item-head">
+          <h3>Full Stack Software Engineer Intern · <span>Pan-Aesthetics</span></h3>
+          <time>Nov. 2025 – Apr. 2026 · Remote</time>
+        </div>
+        <ul>
+          <li>Shipped production backend and web features end to end for an AI note-taking platform: hierarchical knowledge organization, semantic search, and GPT-based contextual conversations.</li>
+          <li>Implemented async FastAPI services for multi-note context extraction, prompt construction, and response generation, with structured session logging for tracing failures in production.</li>
+          <li>Built LangGraph multi-agent workflows (planning, generation, QA, formatting) with deterministic routing, bounded retries, and schema-validated JSON outputs.</li>
+          <li>Integrated Dockerized PostgreSQL, Redis, Meilisearch, and FAISS vector retrieval, giving the team reproducible local environments.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <h3>Software Engineer Intern · <span>National Center for Supercomputing Applications</span></h3>
+          <time>June 2024 – July 2025 · Champaign, IL</time>
+        </div>
+        <ul>
+          <li>Developed real-time VR simulations in Unity (C#) that convey object stiffness through pseudo-haptic feedback alone, with physics-based stretching, twisting, and bending deformation.</li>
+          <li>Integrated Tobii eye tracking and implemented I-VT filtering to classify fixations and saccades in real time, producing attention heatmaps used to refine UI/UX layouts.</li>
+          <li>Built a drone-based bridge inspection simulation; its gaze data pipeline supported a journal publication.</li>
+          <li>Ran user studies with 100 participants — 85% correctly identified stiffness differences using visual feedback only.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="projects" class="wrap">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <p class="kicker">IMMERSEd HCI Group @ Emory</p>
+          <h3>CLAdVR — Adaptive LLM Instructor for VR</h3>
+          <p>An LLM instructor for VR machining training. A Unity runtime and a FastAPI planner talk over versioned JSON contracts; live EEG cognitive-load streams (LSL) gate when the instructor intervenes with voice, arrow cues, or ghost-hand demonstrations.</p>
+          <p class="tags">Unity · C# · FastAPI · vLLM · LSL</p>
+        </article>
+
+        <article class="card">
+          <p class="kicker">Independent project</p>
+          <h3>Commercial CRM Decision Agent</h3>
+          <p>Fine-tuned Qwen2.5-3B-Instruct with 4-bit QLoRA, then DPO on 300 preference pairs. On an independent 30-case robustness set, intent macro F1 rose from 53.3% to 76.9% and risk macro F1 from 58.6% to 78.9%. Includes a bounded ReAct controller and a LangGraph manager–specialist workflow.</p>
+          <p class="tags">Python · PyTorch · QLoRA · DPO · LangGraph</p>
+        </article>
+
+        <article class="card media">
+          <img src="assets/vr.jpg" alt="Pseudo-haptic VR research poster" loading="lazy">
+          <div>
+            <p class="kicker">NCSA</p>
+            <h3>Pseudo-Haptic Stiffness in VR</h3>
+            <p>Users feel virtual objects as stiffer or softer using visual feedback only — no haptic hardware. Validated in a 100-participant study.</p>
+            <p class="tags">Unity · C# · Tobii · User studies</p>
+            <a class="link" href="https://youtu.be/ScPE8P_KF8Q" target="_blank" rel="noopener">Watch demo →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="publications" class="wrap">
+      <h2>Publications</h2>
+      <ul class="pubs">
+        <li>
+          D. Jimenez Gil, <strong>H. Zhang</strong>, et al.
+          <a href="https://doi.org/10.1016/j.aei.2026.105354" target="_blank" rel="noopener">“Automated Gaze-Based Behavioral Segmentation and Temporal Representation for Bridge Inspection.”</a>
+          <em>Advanced Engineering Informatics</em>, 2027.
+        </li>
+        <li>
+          B. Ascoli, <strong>H. Zhang</strong>, J. D. Choi.
+          “ConvoGraph: Can LLMs Track Computational Thinking as It Unfolds?”
+          <em>Under review at EACL 2027.</em>
+        </li>
+      </ul>
+    </section>
+
+    <section id="education" class="wrap">
+      <h2>Education</h2>
+      <div class="edu">
+        <div><h3>Emory University</h3><p>M.S. Computer Science</p></div><time>Dec. 2027</time>
+      </div>
+      <div class="edu">
+        <div><h3>University of Illinois Urbana-Champaign</h3><p>B.S. Econometrics &amp; Quantitative Economics; Minors in CS and Statistics</p></div><time>May 2025</time>
+      </div>
+    </section>
+
+    <section id="contact" class="wrap contact">
+      <h2>Contact</h2>
+      <p>I'm looking for Summer 2027 software engineering internships.</p>
+      <p><a href="mailto:hzha853@emory.edu">hzha853@emory.edu</a> · <a href="https://github.com/HaosenZhang0426" target="_blank" rel="noopener">github.com/HaosenZhang0426</a></p>
+    </section>
+  </main>
+
+  <footer class="wrap footer">© 2026 Haosen Zhang</footer>
+</body>
+</html>

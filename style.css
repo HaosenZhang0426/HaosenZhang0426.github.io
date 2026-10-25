@@ -1,0 +1,109 @@
+:root {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --text: #16181d;
+  --muted: #5b6270;
+  --border: #e4e6eb;
+  --accent: #1f5fd6;
+  --accent-soft: #e8effc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1115;
+    --surface: #171a21;
+    --text: #e8eaee;
+    --muted: #9aa2b1;
+    --border: #262b35;
+    --accent: #6f9cff;
+    --accent-soft: #1b2540;
+  }
+  .schools img { filter: brightness(0) invert(1); opacity: .85; }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 20px; }
+
+.nav {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner { display: flex; justify-content: space-between; align-items: center; height: 56px; }
+.brand { font-weight: 700; color: var(--text); }
+.nav-links { display: flex; gap: 20px; font-size: 14px; }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+
+.hero { display: flex; gap: 36px; align-items: center; padding-top: 64px; padding-bottom: 32px; }
+.headshot { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; flex-shrink: 0; box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+h1 { font-size: 40px; line-height: 1.15; margin: 0 0 6px; letter-spacing: -0.02em; }
+.tagline { margin: 0 0 14px; color: var(--accent); font-weight: 600; }
+.lead { margin: 0 0 16px; color: var(--muted); max-width: 620px; }
+.schools { display: flex; gap: 18px; align-items: center; margin-bottom: 20px; }
+.schools img { width: auto; }
+.cta { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn {
+  display: inline-block; padding: 9px 18px; border-radius: 8px;
+  background: var(--accent); color: #fff; font-weight: 600; font-size: 14px;
+}
+.btn:hover { text-decoration: none; opacity: .9; }
+.btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+
+section { padding: 36px 20px; }
+h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin: 0 0 20px; }
+h3 { font-size: 17px; margin: 0; line-height: 1.35; }
+
+.item { margin-bottom: 28px; }
+.item-head { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
+.item-head span { color: var(--muted); font-weight: 500; }
+time { color: var(--muted); font-size: 14px; white-space: nowrap; }
+ul { margin: 0; padding-left: 20px; }
+li { margin-bottom: 6px; }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  padding: 22px; display: flex; flex-direction: column;
+}
+.card p { margin: 10px 0 0; font-size: 15px; }
+.card.media { grid-column: 1 / -1; flex-direction: row; gap: 22px; align-items: center; }
+.card.media img { width: 42%; border-radius: 8px; object-fit: cover; aspect-ratio: 4 / 3; }
+.kicker { margin: 0 0 4px !important; font-size: 12px !important; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; }
+.tags { color: var(--muted); font-size: 13px !important; margin-top: auto !important; padding-top: 12px; }
+.card.media .tags { margin-top: 10px !important; padding-top: 0; }
+.link { display: inline-block; margin-top: 10px; font-weight: 600; font-size: 14px; }
+
+.pubs { padding-left: 20px; }
+.pubs li { margin-bottom: 12px; }
+
+.edu { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+.edu p { margin: 2px 0 0; color: var(--muted); font-size: 15px; }
+
+.contact p { margin: 0 0 6px; }
+.footer { padding-top: 24px; padding-bottom: 40px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--border); }
+
+@media (max-width: 680px) {
+  .hero { flex-direction: column; text-align: center; padding-top: 40px; }
+  .schools, .cta { justify-content: center; }
+  .lead { margin-left: auto; margin-right: auto; }
+  h1 { font-size: 32px; }
+  .nav-links { gap: 12px; font-size: 13px; }
+  .nav-links a:nth-child(3) { display: none; }
+  .grid { grid-template-columns: 1fr; }
+  .card.media { flex-direction: column; }
+  .card.media img { width: 100%; }
+  .edu { flex-direction: column; gap: 2px; }
+}
